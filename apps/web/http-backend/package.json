@@ -5,11 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "pnpm run build:tsc",
-    "dev": "pnpm run dev:tsc",
-    "start": "pnpm run start:tsc"
+    "build": "tsc -b",
+    "dev": "npm run build && npm run start",
+    "start": "node/dist/server.js"
   },
-  "dependencies": {"@repo/typescript-config":"workspace:*"},
+  "dependencies": {
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

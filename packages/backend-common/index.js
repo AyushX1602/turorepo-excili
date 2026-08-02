@@ -1,0 +1,1 @@
+exports.JWT_SECRET = require("./config.js").JWT_SECRET;

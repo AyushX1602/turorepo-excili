@@ -1,0 +1,11 @@
+{
+  "name": "@repo/backend-common",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
+}

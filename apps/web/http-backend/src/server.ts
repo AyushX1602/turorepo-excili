@@ -32,6 +32,11 @@ app.post('/signin', (req, res) => {
 })
 
 app.post('/room',middleware, (req, res) => {
+  const result = CreateRoomSchema.safeParse(req.body);
+
+  if (!result.success) {
+    return res.status(400).json({ error: 'Invalid room data' });
+  }
  res.json({
   roomId: 1,
  })

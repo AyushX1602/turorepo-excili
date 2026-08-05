@@ -1,8 +1,17 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../../../../packages/backend-common/index.js";
+
+declare global {
+  namespace Express {
+    interface Request {
+      userId?: string;
+    }
+  }
+}
+
 type AuthenticatedRequest = Request & {
-  userId?: number;
+  userId?: string;
 };
 
 export function middleware(req: AuthenticatedRequest, res: Response, next: NextFunction) {
@@ -16,7 +25,7 @@ export function middleware(req: AuthenticatedRequest, res: Response, next: NextF
 
   const decoded = jwt.verify(token, JWT_SECRET);
 
-  if (typeof decoded === "string" || typeof decoded.userId !== "number") {
+  if (typeof decoded === "string" || typeof decoded.userId !== "string") {
     return res.status(403).json({ message: "Forbidden" });
   }
 

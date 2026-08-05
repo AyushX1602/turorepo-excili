@@ -2,11 +2,11 @@
   "name": "Excilidraw",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build": "pnpm -r --if-present run build",
+    "dev": "pnpm -r --filter \"./apps/**\" --parallel --stream run dev",
+    "lint": "pnpm -r --if-present run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "check-types": "pnpm -r --if-present run check-types"
   },
   "devDependencies": {
     "prettier": "^3.7.4",

@@ -1,14 +1,7 @@
 {
     "extends": "@repo/typescript-config/base.json",
     "compilerOptions": {
-        "ignoreDeprecations": "6.0",
-        "baseUrl": ".",
-        "rootDir": "../../..",
-        "outDir": "dist",
-        "paths": {
-            "@repo/common": ["../../../packages/common/src/types.ts"],
-            "@repo/common/types": ["../../../packages/common/src/types.ts"],
-            "@repo/backend-common/config": ["../../../packages/backend-common/config.d.ts"]
-        }
+        "rootDir": "src",
+        "outDir": "dist"
     }
 }

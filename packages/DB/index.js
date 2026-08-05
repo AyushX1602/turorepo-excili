@@ -13,4 +13,5 @@ if (!connectionString) {
 
 const adapter = new PrismaPg({ connectionString });
 
+exports.PrismaClient = PrismaClient;
 exports.prismaClient = new PrismaClient({ adapter });
